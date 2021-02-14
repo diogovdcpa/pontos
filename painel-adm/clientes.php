@@ -91,7 +91,9 @@ if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Admin'){
                     $query = $pdo->query("SELECT * FROM carac where id = '" . $id2 . "' ");
                     $res = $query->fetchAll(PDO::FETCH_ASSOC);
 
+                    $inova2 = $res[0]['inova'];
                     $nome2 = $res[0]['nome'];
+                    $telefone2 = $res[0]['telefone'];
                 } else {
                     $titulo = "Inserir Registro";
                 }
@@ -104,16 +106,25 @@ if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Admin'){
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
+            <!-- FORMULARIO DE INSERIR OU EDITAR -->
             <form id="form" method="POST">
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label>Nome</label>
-                        <input value="<?php echo @$nome2 ?>" type="text" class="form-control" id="nome-cat" name="nome-cat" placeholder="Nome">
+                        <label>Inova</label>
+                        <input value="<?php echo @$inova2 ?>" type="text" class="form-control" id="inova_cli" name="inova_cli" placeholder="Codigo Inova">
                     </div>
 
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input value="<?php echo @$nome2 ?>" type="text" class="form-control" id="nome_cli" name="nome_cli" placeholder="Nome">
+                    </div>
 
-
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input value="<?php echo @$telefone2 ?>" type="text" class="form-control" id="telefone_cli" name="telefone_cli" placeholder="Telefone">
+                    </div>
 
                     <small>
                         <div id="mensagem">
@@ -124,13 +135,9 @@ if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Admin'){
                 </div>
 
 
-
                 <div class="modal-footer">
-
-
-
                     <input value="<?php echo @$_GET['id'] ?>" type="hidden" name="txtid2" id="txtid2">
-                    <input value="<?php echo @$nome2 ?>" type="hidden" name="antigo" id="antigo">
+                    <input value="<?php echo @$inova2 ?>" type="hidden" name="antigo" id="antigo">
 
                     <button type="button" id="btn-fechar" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" name="btn-salvar" id="btn-salvar" class="btn btn-primary">Salvar</button>
