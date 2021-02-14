@@ -2,7 +2,7 @@
 
     //variaveis para o menu
     $pag = @$_GET["pag"];
-    $menu1 = "menu1";
+    $menu1 = "clientes";
     $menu2 = "menu2";
     $menu3 = "menu3";
     $menu4 = "menu4";
@@ -84,7 +84,7 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">PESSOAS:</h6>
-                            <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>">Menu 1</a>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>">Clientes</a>
                             <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>">Menu 2</a>
                         </div>
                     </div>
